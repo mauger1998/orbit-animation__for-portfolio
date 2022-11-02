@@ -95,50 +95,44 @@ ul:hover li img {
 
 li:first-child {
     
-    animation:li-one 1s forwards, throb 1s 2s ease alternate infinite;
     animation-delay:0s;
     transform-origin: center;
 }
 li:nth-child(2) {
     
-    animation:li-two 1s forwards, throb 1s ease alternate infinite;
     animation-delay:500ms;
     transform-origin: center;
 }
 li:nth-child(3) {
     
-    animation:li-three 1s forwards, throb 1s ease alternate infinite;
     animation-delay:1000ms;
     transform-origin: center;
 }
 li:nth-child(4) {
     
-    animation:li-four 1s forwards, throb 1s ease alternate infinite;
     animation-delay:1500ms;
     transform-origin: center;
 }
 li:nth-child(5) {
     
-    animation:li-five 1s forwards, throb 1s ease alternate infinite;
     animation-delay:2000ms;
     transform-origin: center;
 }
 li:nth-child(6) {
     
-    animation:li-six 1s forwards, throb 1s ease alternate infinite;
+    
     animation-delay:2500ms;
     transform-origin: center;
 }
 li:nth-child(7) {
     
-    animation:li-seven 1s forwards, throb 1s ease alternate infinite;
+    
     animation-delay:3000ms;
     transform-origin: center;
 }
 li:nth-child(8) {
     
-    transition: transform 1s;
-    animation:li-eight 1s forwards, throb 1s ease alternate infinite;
+    
     animation-delay:3500ms;
     transform-origin: center;
 }
@@ -194,6 +188,65 @@ ul {
     }
 }
 
+
+
+/****
+*****
+*****
+*****/
+
+.scroll {
+    height:101vh;
+    width:100vw;
+    background-color:black;
+}
+
+.orbit__body {
+    opacity:0;
+    transition: opacity 3s;
+}
+.addToFirstList {
+    animation:li-one 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToSecondList {
+    animation:li-two 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToThirdList {
+    animation:li-three 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToFourthList {
+    animation:li-four 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToFifthList {
+    animation:li-five 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToSixthList {
+    animation:li-six 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToSeventhList {
+    animation:li-seven 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.addToEigthList {
+    animation:li-eight 1s forwards, throb 1s 2s ease alternate infinite;
+}
+.scroll {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:2rem;
+}
+.scroll h1,
+.scroll h3 {
+    color:white;
+    
+}
+.scroll h1 {
+    font-size:5rem;
+}
+.scroll h3 {
+    font-size:2rem;
+}
 @keyframes li-one {
     to {
         transform:translate(15rem, 0rem);
@@ -233,20 +286,4 @@ ul {
     to {
         transform:translate(11rem, -11rem);
     }
-}
-
-/****
-*****
-*****
-*****/
-
-.scroll {
-    height:101vh;
-    width:100vw;
-    background-color:black;
-}
-
-.orbit__body {
-    opacity:0;
-    transition: opacity 3s;
 }
