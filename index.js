@@ -17,8 +17,8 @@ const eigthList = document.querySelector("#eigthList")
 
 const options = { 
     root: null,
-    rootMargin: " -150px",
-    threshold: 0.4,
+    rootMargin: "0px",
+    threshold: 0.8,
 }
 
 const observer = 
