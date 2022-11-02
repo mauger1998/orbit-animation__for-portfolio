@@ -12,7 +12,7 @@ li > img {
     width:100vw;
     display:grid;
     place-items:center;
-    border:2px solid red;
+    background-color:black;
 }
 .orbit__center-image {
     position:relative;
@@ -29,59 +29,134 @@ ul {
     list-style:none;
     display:grid;
     place-items:center;
-    border:1px solid black;
     width:10rem;
     height:7.5rem;
 }
 li {
     position:absolute;
-    border:1px solid black;
     height:150px;
     width:150px;
     border-radius:100%;
     display:grid;
     place-items: center;
+    background-color:gray;
+    
 }
 p {
-    display:none;
+    position:absolute;
+    animation: reverse-orbit 30s linear infinite;
+    transform-origin: center;
+    animation-duration: infinite;
+    color:white;
+    font-size:2rem;
+    background-color:gray;
+    height:100%;
+    width:100%;
+    border-radius:100%;
+    opacity:0;
+    display:grid;
+    place-items:center;
 }
 
-li:first-child {
-    transform:translate(15rem, 0rem)
+.orbit__body li:hover p {
+    opacity:1;
+    animation-play-state: paused;
+
 }
-li:nth-child(2) {
-    transform: translate(12rem, 12rem)
+ul:hover li p {
+    animation-play-state: paused;
 }
-li:nth-child(3) {
-    transform:translate(0rem, 15rem)
-}
-li:nth-child(4) {
-    transform:translate(-12rem, 12rem)
-}
-li:nth-child(5) {
-    transform:translate(-15rem, 0rem)
-}
-li:nth-child(6) {
-    transform:translate(-12rem, -12rem)
-}
-li:nth-child(7) {
-    transform:translate(0rem, -15rem)
-}
-li:nth-child(8) {
-    transform:translate(12rem, -12rem)
-}
+
+
+
+
+
 
 li:nth-child(2) > img {
     width:75px;
 }
+
+
+
+li:hover {
+    cursor:pointer;
+    /* animation-play-state: paused; */
+}
+
+ul:hover {
+    animation-play-state: paused;
+
+}
+ul:hover li img {
+    animation-play-state: paused;
+}
+
+
+li:first-child {
+    
+    animation:li-one 1s forwards, throb 1s 2s ease alternate infinite;
+    animation-delay:0s;
+    transform-origin: center;
+}
+li:nth-child(2) {
+    
+    animation:li-two 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:500ms;
+    transform-origin: center;
+}
+li:nth-child(3) {
+    
+    animation:li-three 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:1000ms;
+    transform-origin: center;
+}
+li:nth-child(4) {
+    
+    animation:li-four 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:1500ms;
+    transform-origin: center;
+}
+li:nth-child(5) {
+    
+    animation:li-five 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:2000ms;
+    transform-origin: center;
+}
+li:nth-child(6) {
+    
+    animation:li-six 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:2500ms;
+    transform-origin: center;
+}
+li:nth-child(7) {
+    
+    animation:li-seven 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:3000ms;
+    transform-origin: center;
+}
+li:nth-child(8) {
+    
+    transition: transform 1s;
+    animation:li-eight 1s forwards, throb 1s ease alternate infinite;
+    animation-delay:3500ms;
+    transform-origin: center;
+}
+
+li {
+    transition: transform 0.5s;
+}
+
 li > img {
-    animation: reverse-orbit 60s forwards infinite;
+    animation: reverse-orbit 30s linear infinite;
+    transform-origin: center;
+    animation-duration: infinite;
 }
 
 ul {
-    animation: orbit 60s forwards infinite;
+    animation: orbit 30s linear infinite;
+    transform-origin: center;
+      
 }
-
 @keyframes orbit {
     100% {
         rotate:1turn;
@@ -90,5 +165,52 @@ ul {
 @keyframes reverse-orbit {
     100% {
         rotate:-1turn;
+    }
+}
+
+@keyframes throb {
+    100% {
+        /* scale:1.05; */
+    }
+}
+
+@keyframes li-one {
+    to {
+        transform:translate(15rem, 0rem);
+    }
+}
+@keyframes li-two {
+    to {
+        transform: translate(11rem, 11rem);
+    }
+}
+@keyframes li-three {
+    to {
+        transform:translate(0rem, 15rem);
+    }
+}
+@keyframes li-four {
+    to {
+        transform:translate(-11rem, 11rem);
+    }
+}
+@keyframes li-five {
+    to {
+        transform:translate(-15rem, 0rem);
+    }
+}
+@keyframes li-six {
+    to {
+        transform:translate(-11rem, -11rem);
+    }
+}
+@keyframes li-seven {
+    to {
+        transform:translate(0rem, -15rem);
+    }
+}
+@keyframes li-eight {
+    to {
+        transform:translate(11rem, -11rem);
     }
 }
