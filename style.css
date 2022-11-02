@@ -1,0 +1,94 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+li > img {
+    width:100px;
+}
+.orbit__main-container {
+    height:100vh;
+    width:100vw;
+    display:grid;
+    place-items:center;
+    border:2px solid red;
+}
+.orbit__center-image {
+    position:relative;
+    width:10rem;
+    
+}
+.orbit__center-image > img {
+    border-radius:1.5rem;
+    width:inherit;
+    position:absolute;
+}
+ul {
+    position:relative;
+    list-style:none;
+    display:grid;
+    place-items:center;
+    border:1px solid black;
+    width:10rem;
+    height:7.5rem;
+}
+li {
+    position:absolute;
+    border:1px solid black;
+    height:150px;
+    width:150px;
+    border-radius:100%;
+    display:grid;
+    place-items: center;
+}
+p {
+    display:none;
+}
+
+li:first-child {
+    transform:translate(15rem, 0rem)
+}
+li:nth-child(2) {
+    transform: translate(12rem, 12rem)
+}
+li:nth-child(3) {
+    transform:translate(0rem, 15rem)
+}
+li:nth-child(4) {
+    transform:translate(-12rem, 12rem)
+}
+li:nth-child(5) {
+    transform:translate(-15rem, 0rem)
+}
+li:nth-child(6) {
+    transform:translate(-12rem, -12rem)
+}
+li:nth-child(7) {
+    transform:translate(0rem, -15rem)
+}
+li:nth-child(8) {
+    transform:translate(12rem, -12rem)
+}
+
+li:nth-child(2) > img {
+    width:75px;
+}
+li > img {
+    animation: reverse-orbit 60s forwards infinite;
+}
+
+ul {
+    animation: orbit 60s forwards infinite;
+}
+
+@keyframes orbit {
+    100% {
+        rotate:1turn;
+    }
+}
+@keyframes reverse-orbit {
+    100% {
+        rotate:-1turn;
+    }
+}
